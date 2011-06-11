@@ -40,13 +40,14 @@ class MailDispatcher(BaseDispatcher):
         subject = (self.subject_format or self.default_subject_format) % data
         message = (self.message_format or self.default_message_format) % data
 
+        failover_mail_host = data['host'].split(':', 1)[0]
         mail_to = self.mail_to or \
                     portal.getProperty('email_from_address') or \
-                   '%s@%s' % (getpass.getuser(), data['host'])
+                   '%s@%s' % (getpass.getuser(), failover_mail_host)
 
         mail_from = self.mail_from or \
                     portal.getProperty('email_from_address') or \
-                   '%s@%s' % (getpass.getuser(), data['host'])
+                   '%s@%s' % (getpass.getuser(), failover_mail_host)
 
         try:
             mh.send(message, mail_to, mail_from, subject, immediate=True)
