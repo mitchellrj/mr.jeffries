@@ -24,3 +24,4 @@ The currently available listeners are:
 
 The currently available dispatchers are:
  * Mail dispatcher
+ * JSON/JSONP dispatcher
