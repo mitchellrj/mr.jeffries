@@ -16,12 +16,8 @@ def initialize(context):
     events.initialize(context)
     listeners.initialize(context)
 
-def reregisterHandlers():
     import Zope2
-    app = Zope2.app()
-    for p in app.objectValues('Plone Site'):
+    for p in Zope2.app().objectValues('Plone Site'):
         tool_instance = getToolByName(p, config.TOOL_NAME, None)
         if tool_instance:
             tool_instance.initializeHandlers()
-
-reregisterHandlers()
