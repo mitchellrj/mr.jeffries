@@ -10,7 +10,7 @@ setup(
                              open('HISTORY.rst').read(),
                              open('LICENSE.rst').read()]),
     packages = find_packages(),
-    install_requires = ['zope.interface'],
+    install_requires = ['zope.interface', 'simplejson'],
     extras_requires = {
         'Error Log Monitoring': ['Products.SiteErrorLog', 'collective.monkeypatcher']
     },

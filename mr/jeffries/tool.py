@@ -11,6 +11,7 @@ try:
 except ImportError:
     from Globals import InitializeClass
 from OFS.Folder import Folder
+from OFS.Traversable import Traversable
 from Products.CMFCore.utils import UniqueObject
 from zope.interface import implements
 
@@ -19,7 +20,7 @@ from interfaces import IMonitorTool
 from mr.jeffries.dispatchers.interfaces import IDispatcher
 from mr.jeffries.listeners.interfaces import IListener
 
-class MonitorTool(Folder, UniqueObject):
+class MonitorTool(Folder, UniqueObject, Traversable):
 
     security = ClassSecurityInfo()
     security.setDefaultAccess('allow')

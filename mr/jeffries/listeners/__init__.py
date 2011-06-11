@@ -91,8 +91,9 @@ from interfaces import IListener
 def initialize(context):
     from errorlog import ErrorLogListener
     from mr.jeffries.dispatchers.mail import MailDispatcher
+    from mr.jeffries.dispatchers.jsonp import JSONPDispatcher
     ContentInit(config.PROJECTNAME + ': listeners & dispatchers',
-                content_types=(ErrorLogListener,MailDispatcher),
+                content_types=(ErrorLogListener,MailDispatcher,JSONPDispatcher),
                 ).initialize(context)
 
 def defaultEventHandle(event):
