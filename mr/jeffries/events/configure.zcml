@@ -1,0 +1,21 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:monkey="http://namespaces.plone.org/monkey">
+
+    <include package="collective.monkeypatcher" />
+
+    <monkey:patch
+        description="Adds mr.jeffries monitor to error log"
+        class="Products.SiteErrorLog.SiteErrorLog.SiteErrorLog"
+        original="raising"
+        replacement=".errorlog.monitorRaising"
+        preserveOriginal="true"
+        />
+
+    <adapter
+        provides=".IEvent"
+        for=".interfaces.IErrorLogEvent"
+        factory=".errorlog.ErrorLogEventAdapter"
+        />
+
+</configure>

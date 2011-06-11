@@ -1,0 +1,15 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n:domain="mr.jeffries">
+
+    <genericsetup:importStep
+        name="mr.jeffries"
+        title="Import monitoring.xml"
+        description="Import monitoring.xml"
+        handler="mr.jeffries.exportimport.import_config">
+        <depends name="setup_monitoring_tool" />
+    </genericsetup:importStep>
+
+
+</configure>
