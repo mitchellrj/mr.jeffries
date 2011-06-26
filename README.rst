@@ -2,7 +2,7 @@
 mr.jeffries
 ===========
 
-mr.jeffries likes to watch. He is all up in your shit and will tell
+mr.jeffries likes to watch. He is all up in your business and will tell
 anyone he can about it.
 
 mr.jeffries is a monitoring tool for Plone. Instead of just logging
